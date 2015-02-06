@@ -5,13 +5,9 @@ RSpec.describe 'routes for topics' do
     expect(get('/topics')).to route_to('topics#index')
   end
 
-  # it 'routes GET /topics/new to the topics controller' do
-  #   expect(get('/topics/new')).to route_to('topics#new')
-  # end
-
-  # it 'routes POST /topics to the topics controller' do
-  #   expect(post('/topics')).to route_to('topics#create')
-  # end
+  it 'routes POST /topics to the topics controller' do
+    expect(post('/topics')).to route_to('topics#create')
+  end
 
   # it 'routes GET /topics/1 to the topics controller and sets id' do
   #   expect(get('/topics/1')).to route_to(

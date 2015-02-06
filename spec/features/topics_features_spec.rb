@@ -12,14 +12,14 @@ RSpec.feature 'Managing topics' do
     expect(page).to have_selector 'p', count: 3
   end
 
-  # scenario 'Create a topic' do
-  #   visit '/topics/new'
+  scenario 'Create a topic' do
+    visit '/topics'
 
-  #   fill_in 'Name', with: 'REST'
-  #   click_on 'Create Topic'
+    fill_in 'Name', with: 'REST'
+    click_on 'Create Topic'
 
-  #   expect(page).to have_content(/success/i)
-  # end
+    expect(page).to have_content(/success/i)
+  end
 
   # scenario 'Read a topic' do
   #   topic = Topic.create!(name: 'REST')
