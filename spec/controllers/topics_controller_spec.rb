@@ -20,11 +20,11 @@ RSpec.describe TopicsController do
       expect(response).to render_template('index')
     end
 
-  #   it 'assigns @topics' do
-  #     topics = Topic.all
-  #     get :index
-  #     expect(assigns(:topics)).to eq topics
-  #   end
+    it 'assigns @topics' do
+      topics = Topic.all
+      get :index
+      expect(assigns(:topics)).to eq topics
+    end
   end
 
   # describe 'GET new' do
