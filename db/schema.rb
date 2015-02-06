@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150206152829) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.text     "message"
     t.integer  "resource_id"
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20150206152829) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "comments", ["resource_id"], name: "index_comments_on_resource_id"
+  add_index "comments", ["resource_id"], name: "index_comments_on_resource_id", using: :btree
 
   create_table "resources", force: :cascade do |t|
     t.string   "name"
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150206152829) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "resources", ["topic_id"], name: "index_resources_on_topic_id"
+  add_index "resources", ["topic_id"], name: "index_resources_on_topic_id", using: :btree
 
   create_table "topics", force: :cascade do |t|
     t.string   "name"
@@ -38,4 +41,6 @@ ActiveRecord::Schema.define(version: 20150206152829) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comments", "resources"
+  add_foreign_key "resources", "topics"
 end
