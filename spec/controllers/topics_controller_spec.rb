@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe TopicsController do
-  # let(:valid_attributes) {
-  #   { name: 'Relational Databases' }
-  # }
+  let(:valid_attributes) {
+    { name: 'Relational Databases' }
+  }
 
   # let(:invalid_attributes) {
   #   { name: nil }
@@ -64,25 +64,25 @@ RSpec.describe TopicsController do
   #   end
   # end
 
-  # describe 'POST create' do
-  #   context 'with valid attributes' do
-  #     it 'saves a new topic' do
-  #       expect {
-  #         post :create, topic: valid_attributes
-  #       }.to change(Topic, :count).by 1
-  #     end
+  describe 'POST create' do
+    context 'with valid attributes' do
+      it 'saves a new topic' do
+        expect {
+          post :create, topic: valid_attributes
+        }.to change(Topic, :count).by 1
+      end
 
-  #     it 'assigns @topic' do
-  #       post :create, topic: valid_attributes
-  #       expect(assigns(:topic)).to be_an Topic
-  #       expect(assigns(:topic)).to be_persisted
-  #     end
+      it 'assigns @topic' do
+        post :create, topic: valid_attributes
+        expect(assigns(:topic)).to be_a Topic
+        expect(assigns(:topic)).to be_persisted
+      end
 
-  #     it 'redirects to the created topic' do
-  #       post :create, topic: valid_attributes
-  #       expect(response).to redirect_to(Topic.last)
-  #     end
-  #   end
+      it 'redirects to topics#index' do
+        post :create, topic: valid_attributes
+        expect(response).to redirect_to topics_url
+      end
+    end
 
   #   context 'with invalid attributes' do
   #     it 'assigns @topic, but does not save a new topic' do
@@ -156,7 +156,7 @@ RSpec.describe TopicsController do
   #       expect(response).to render_template('edit')
   #     end
   #   end
-  # end
+  end
 
   # describe 'DELETE destroy' do
   #   it 'destroys the requested topic' do
