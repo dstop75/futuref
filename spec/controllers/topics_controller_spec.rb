@@ -5,9 +5,9 @@ RSpec.describe TopicsController do
     { name: 'Relational Databases' }
   }
 
-  # let(:invalid_attributes) {
-  #   { name: nil }
-  # }
+  let(:invalid_attributes) {
+    { name: nil }
+  }
 
   describe 'GET index' do
     it 'has a 200 status code' do
@@ -84,18 +84,24 @@ RSpec.describe TopicsController do
       end
     end
 
-  #   context 'with invalid attributes' do
-  #     it 'assigns @topic, but does not save a new topic' do
-  #       post :create, topic: invalid_attributes
-  #       expect(assigns(:topic)).to be_a_new Topic
-  #     end
+    context 'with invalid attributes' do
+      it 'assigns @topic' do
+        post :create, topic: invalid_attributes
+        expect(assigns(:topic)).to be_a Topic
+      end
+
+      # it 'does not save a new topic' do
+      #   expect {
+      #     post :create, topic: valid_attributes
+      #   }.to change(Topic, :count).by 0
+      # end
 
   #     it 're-renders the new template' do
   #       post :create, topic: invalid_attributes
   #       expect(response).to render_template 'new'
   #     end
-  #   end
-  # end
+    end
+  end
 
   # describe 'GET edit' do
   #   it 'has a 200 status code' do
@@ -156,7 +162,7 @@ RSpec.describe TopicsController do
   #       expect(response).to render_template('edit')
   #     end
   #   end
-  end
+  # end
 
   # describe 'DELETE destroy' do
   #   it 'destroys the requested topic' do
