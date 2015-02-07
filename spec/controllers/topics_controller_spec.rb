@@ -51,11 +51,11 @@ RSpec.describe TopicsController do
       expect(response.status).to eq 200
     end
 
-  #   it 'renders the show template' do
-  #     topic = Topic.create!(valid_attributes)
-  #     get :show, id: topic
-  #     expect(response).to render_template('show')
-  #   end
+    it 'renders the show template' do
+      topic = Topic.create!(valid_attributes)
+      get :show, id: topic
+      expect(response).to render_template('show')
+    end
 
   #   it 'assigns @topic' do
   #     topic = Topic.create!(valid_attributes)
