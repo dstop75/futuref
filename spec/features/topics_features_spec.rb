@@ -9,7 +9,7 @@ RSpec.feature 'Managing topics' do
     visit '/topics'
 
     expect(page).to have_content 'Topics'
-    expect(page).to have_selector 'p', count: 3
+    expect(page).to have_selector 'h2', count: 3
   end
 
   scenario 'Create a topic' do
@@ -21,14 +21,13 @@ RSpec.feature 'Managing topics' do
     expect(page).to have_content(/success/i)
   end
 
-  # scenario 'Read a topic' do
-  #   topic = Topic.create!(name: 'REST')
+  scenario 'Read a topic' do
+    topic = Topic.create!(name: 'REST')
 
-  #   visit "/topics/#{topic.id}"
+    visit "/topics/#{topic.id}"
 
-  #   expect(page.find('h1')).to have_content 'REST'
-  #   expect(page).to have_content # a list of resources, maybe a list of comments
-  # end
+    expect(page.find('h1')).to have_content 'REST'
+  end
 
   # scenario 'Update a topic' do
   #   topic = Topic.create!(name: 'REST')
