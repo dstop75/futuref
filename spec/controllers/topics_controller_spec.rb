@@ -57,11 +57,11 @@ RSpec.describe TopicsController do
       expect(response).to render_template('show')
     end
 
-  #   it 'assigns @topic' do
-  #     topic = Topic.create!(valid_attributes)
-  #     get :show, id: topic
-  #     expect(assigns(:topic)).to eq topic
-  #   end
+    it 'assigns @topic' do
+      topic = Topic.create!(valid_attributes)
+      get :show, id: topic
+      expect(assigns(:topic)).to eq topic
+    end
   end
 
   describe 'POST create' do
