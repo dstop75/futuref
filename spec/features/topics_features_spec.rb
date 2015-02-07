@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.feature 'Managing topics' do
   scenario 'List all topics' do
     Topic.create!(name: 'REST')
-    Topic.create!(name: 'REST')
-    Topic.create!(name: 'REST')
+    Topic.create!(name: 'RSpec')
+    Topic.create!(name: 'Relational Databases')
 
     visit '/topics'
 
@@ -13,12 +13,12 @@ RSpec.feature 'Managing topics' do
   end
 
   scenario 'Create a topic' do
-    visit '/topics'
+    visit '/topics/new'
 
-    fill_in 'Name', with: 'REST'
+    fill_in 'Name', with: 'Rails'
     click_on 'Create Topic'
 
-    expect(page).to have_content(/success/i)
+    expect('/topics').to have_content(/success/i)
   end
 
   # scenario 'Read a topic' do
