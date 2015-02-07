@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root 'topics#index'
-  resources :topics, only: [:index, :create]
+  resources :topics, only: [:index, :create, :new]
 end
