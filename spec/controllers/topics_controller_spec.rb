@@ -90,11 +90,11 @@ RSpec.describe TopicsController do
         expect(assigns(:topic)).to be_a Topic
       end
 
-      # it 'does not save a new topic' do
-      #   expect {
-      #     post :create, topic: valid_attributes
-      #   }.to change(Topic, :count).by 0
-      # end
+      it 'does not save a new topic' do
+        expect {
+          post :create, topic: invalid_attributes
+        }.to change(Topic, :count).by 0
+      end
 
   #     it 're-renders the new template' do
   #       post :create, topic: invalid_attributes
