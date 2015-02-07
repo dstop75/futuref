@@ -4,9 +4,9 @@ class TopicsController < ApplicationController
     @topic = Topic.new
   end
 
-  # def new
-  #   @topic = Topic.new
-  # end
+  def new
+    # @topic = Topic.new
+  end
 
   def create
     @topic = Topic.new(topic_params)
