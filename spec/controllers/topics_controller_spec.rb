@@ -38,10 +38,10 @@ RSpec.describe TopicsController do
       expect(response).to render_template('new')
     end
 
-  #   it 'assigns @topic' do
-  #     get :new
-  #     expect(assigns(:topic)).to be_a_new Topic
-  #   end
+    it 'assigns @topic' do
+      get :new
+      expect(assigns(:topic)).to be_a_new Topic
+    end
   end
 
   # describe 'GET show' do
