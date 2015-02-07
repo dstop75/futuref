@@ -3,6 +3,10 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
+  def show
+
+  end
+
   def new
     @topics = Topic.all
     @topic = Topic.new

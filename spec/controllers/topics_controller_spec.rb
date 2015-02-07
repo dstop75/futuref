@@ -44,12 +44,12 @@ RSpec.describe TopicsController do
     end
   end
 
-  # describe 'GET show' do
-  #   it 'has a 200 status code' do
-  #     topic = Topic.create!(valid_attributes)
-  #     get :show, id: topic
-  #     expect(response.status).to eq 200
-  #   end
+  describe 'GET show' do
+    it 'has a 200 status code' do
+      topic = Topic.create!(valid_attributes)
+      get :show, id: topic
+      expect(response.status).to eq 200
+    end
 
   #   it 'renders the show template' do
   #     topic = Topic.create!(valid_attributes)
@@ -62,7 +62,7 @@ RSpec.describe TopicsController do
   #     get :show, id: topic
   #     expect(assigns(:topic)).to eq topic
   #   end
-  # end
+  end
 
   describe 'POST create' do
     context 'with valid attributes' do
