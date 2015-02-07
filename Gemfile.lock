@@ -160,6 +160,8 @@ GEM
       pry (~> 0.10)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    puma (2.11.0)
+      rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-cors (0.3.1)
     rack-test (0.6.3)
@@ -299,6 +301,7 @@ DEPENDENCIES
   pg
   pry-byebug
   pry-rails
+  puma
   rack-cors
   rails (= 4.2.0)
   rails_12factor
