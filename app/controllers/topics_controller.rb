@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all
+    @topic = Topic.new
   end
 
   # def new
@@ -11,10 +12,11 @@ class TopicsController < ApplicationController
     @topic = Topic.new(topic_params)
 
     if @topic.save
-      redirect_to topics_url
+      flash[:success] = 'Topic successfully created.'
     else
-      render 'form'
+      flash[:error] = 'Topic not saved - please try again.'
     end
+      redirect_to topics_url
   end
 
   private

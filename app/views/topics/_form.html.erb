@@ -1,6 +1,18 @@
 <h2>Add a New Topic:</h2>
 
-<%= form_for Topic.new do |f| %>
+<%= form_for(@topic) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class='field'>
     <%= f.label :name %>
     <%= f.text_field :name %>
