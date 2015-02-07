@@ -18,7 +18,7 @@ RSpec.feature 'Managing topics' do
     fill_in 'Name', with: 'Rails'
     click_on 'Create Topic'
 
-    expect('/topics').to have_content(/success/i)
+    expect(page).to have_content(/success/i)
   end
 
   # scenario 'Read a topic' do
