@@ -33,10 +33,10 @@ RSpec.describe TopicsController do
       expect(response.status).to eq 200
     end
 
-  #   it 'renders the new template' do
-  #     get :new
-  #     expect(response).to render_template('new')
-  #   end
+    it 'renders the new template' do
+      get :new
+      expect(response).to render_template('new')
+    end
 
   #   it 'assigns @topic' do
   #     get :new
