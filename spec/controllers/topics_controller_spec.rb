@@ -149,19 +149,19 @@ RSpec.describe TopicsController do
       end
     end
 
-#     context 'with invalid attributes' do
-#       it 'assigns @topic' do
-#         topic = Topic.create!(valid_attributes)
-#         patch :update, id: topic, topic: invalid_attributes
-#         expect(assigns(:topic)).to eq topic
-#       end
+    context 'with invalid attributes' do
+      it 'assigns @topic' do
+        topic = Topic.create!(valid_attributes)
+        patch :update, id: topic, topic: invalid_attributes
+        expect(assigns(:topic)).to eq topic
+      end
 
 #       it 're-renders the edit template' do
 #         topic = Topic.create!(valid_attributes)
 #         patch :update, id: topic, topic: invalid_attributes
 #         expect(response).to render_template('edit')
 #       end
-#     end
+    end
   end
 
 #   describe 'DELETE destroy' do
