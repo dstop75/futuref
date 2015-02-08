@@ -103,12 +103,12 @@ RSpec.describe TopicsController do
     end
   end
 
-  # describe 'GET edit' do
-  #   it 'has a 200 status code' do
-  #     topic = Topic.create!(valid_attributes)
-  #     get :edit, id: topic
-  #     expect(response.status).to eq 200
-  #   end
+  describe 'GET edit' do
+    it 'has a 200 status code' do
+      topic = Topic.create!(valid_attributes)
+      get :edit, id: topic
+      expect(response.status).to eq 200
+    end
 
   #   it 'renders the edit template' do
   #     topic = Topic.create!(valid_attributes)
@@ -121,7 +121,7 @@ RSpec.describe TopicsController do
   #     get :edit, id: topic
   #     expect(assigns(:topic)).to eq topic
   #   end
-  # end
+  end
 
   # describe 'PATCH update' do
   #   context 'with valid attributes' do
