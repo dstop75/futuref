@@ -37,11 +37,11 @@ RSpec.describe 'routes for topics' do
     )
   end
 
-  # it 'routes DELETE /topics/1 to the topics controller and sets id' do
-  #   expect(delete('topics/1')).to route_to(
-  #     controller: 'topics',
-  #     action: 'destroy',
-  #     id: '1'
-  #   )
-  # end
+  it 'routes DELETE /topics/1 to the topics controller and sets id' do
+    expect(delete('topics/1')).to route_to(
+      controller: 'topics',
+      action: 'destroy',
+      id: '1'
+    )
+  end
 end

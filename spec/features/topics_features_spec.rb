@@ -41,13 +41,13 @@ RSpec.feature 'Managing topics' do
     expect(page).to have_content 'Conventions'
   end
 
-  # scenario 'Delete a topic' do
-  #   topic = Topic.create!(name: 'REST')
+  scenario 'Delete a topic' do
+    topic = Topic.create!(name: 'REST')
 
-  #   visit "topics/#{topic.id}/edit"
+    visit "topics/#{topic.id}"
 
-  #   click_on 'Delete Topic'
+    click_on 'Delete Topic'
 
-  #   expect(page).to have_content(/success/i)
-  # end
+    expect(page).to have_content(/success/i)
+  end
 end
