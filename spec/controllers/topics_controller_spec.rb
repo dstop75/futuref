@@ -96,10 +96,10 @@ RSpec.describe TopicsController do
         }.to change(Topic, :count).by 0
       end
 
-  #     it 're-renders the new template' do
-  #       post :create, topic: invalid_attributes
-  #       expect(response).to render_template 'new'
-  #     end
+      it 're-renders the new template' do
+        post :create, topic: invalid_attributes
+        expect(response).to render_template 'new'
+      end
     end
   end
 
