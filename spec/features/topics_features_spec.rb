@@ -26,7 +26,7 @@ RSpec.feature 'Managing topics' do
 
     visit "/topics/#{topic.id}"
 
-    expect(page.find('h1')).to have_content 'REST'
+    expect(page).to have_content 'REST'
   end
 
   # scenario 'Update a topic' do
