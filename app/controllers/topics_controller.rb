@@ -33,7 +33,7 @@ class TopicsController < ApplicationController
 
     if @topic.update_attributes(topic_params)
       flash[:success] = 'Topic successfully updated.'
-      redirect_to topic_url(@topic)
+      redirect_to @topic
     else
       render :edit
     end
