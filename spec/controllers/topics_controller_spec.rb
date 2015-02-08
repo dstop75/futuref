@@ -110,11 +110,11 @@ RSpec.describe TopicsController do
       expect(response.status).to eq 200
     end
 
-  #   it 'renders the edit template' do
-  #     topic = Topic.create!(valid_attributes)
-  #     get :edit, id: topic
-  #     expect(response).to render_template('edit')
-  #   end
+    it 'renders the edit template' do
+      topic = Topic.create!(valid_attributes)
+      get :edit, id: topic
+      expect(response).to render_template('edit')
+    end
 
   #   it 'assigns @topic' do
   #     topic = Topic.create!(valid_attributes)
