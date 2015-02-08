@@ -6,9 +6,9 @@ RSpec.describe Resource do
       expect(Resource.create()).to be_a Resource
     end
 
-    # it 'is invalid without a name' do
-    #   expect(Resource.create(url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku')).not_to be_valid
-    # end
+    it 'is invalid without a name' do
+      expect(Resource.create(url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku')).not_to be_valid
+    end
 
     # it 'is invalid without a url' do
     #   expect(Resource.create(name: 'Deploying to Heroku')).not_to be_valid
