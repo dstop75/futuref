@@ -69,8 +69,8 @@ RSpec.describe TopicsController do
       it 'saves a new topic' do
         expect {
           post :create, topic: valid_attributes
-        }.to change(Topic, :count).by 1
-      end
+          }.to change(Topic, :count).by 1
+        end
 
       it 'assigns @topic' do
         post :create, topic: valid_attributes
@@ -93,8 +93,8 @@ RSpec.describe TopicsController do
       it 'does not save a new topic' do
         expect {
           post :create, topic: invalid_attributes
-        }.to change(Topic, :count).by 0
-      end
+          }.to change(Topic, :count).by 0
+        end
 
       it 're-renders the new template' do
         post :create, topic: invalid_attributes
@@ -123,59 +123,59 @@ RSpec.describe TopicsController do
     end
   end
 
-  # describe 'PATCH update' do
-  #   context 'with valid attributes' do
-  #     let(:new_attributes) {
-  #       { name: 'Another Stupid Trick',  'Much disbelief. Wow.' }
-  #     }
+  describe 'PATCH update' do
+    context 'with valid attributes' do
+      let(:new_attributes) {
+        { name: 'DRY' }
+      }
 
-  #     it 'updates the requested topic' do
-  #       topic = Topic.create!(valid_attributes)
-  #       patch :update, id: topic, topic: new_attributes
-  #       topic.reload
-  #       expect(topic.name).to eq new_attributes[:name]
-  #     end
+      it 'updates the requested topic' do
+        topic = Topic.create!(valid_attributes)
+        patch :update, id: topic, topic: new_attributes
+        topic.reload
+        expect(topic.name).to eq new_attributes[:name]
+      end
 
-  #     it 'assigns @topic' do
-  #       topic = Topic.create!(valid_attributes)
-  #       patch :update, id: topic, topic: new_attributes
-  #       expect(assigns(:topic)).to eq topic
-  #     end
+#       it 'assigns @topic' do
+#         topic = Topic.create!(valid_attributes)
+#         patch :update, id: topic, topic: new_attributes
+#         expect(assigns(:topic)).to eq topic
+#       end
 
-  #     it 'redirects to the topic' do
-  #       topic = Topic.create!(valid_attributes)
-  #       patch :update, id: topic, topic: new_attributes
-  #       expect(response).to redirect_to topic
-  #     end
-  #   end
+#       it 'redirects to the topic' do
+#         topic = Topic.create!(valid_attributes)
+#         patch :update, id: topic, topic: new_attributes
+#         expect(response).to redirect_to topic
+#       end
+    end
 
-  #   context 'with invalid attributes' do
-  #     it 'assigns @topic' do
-  #       topic = Topic.create!(valid_attributes)
-  #       patch :update, id: topic, topic: invalid_attributes
-  #       expect(assigns(:topic)).to eq topic
-  #     end
+#     context 'with invalid attributes' do
+#       it 'assigns @topic' do
+#         topic = Topic.create!(valid_attributes)
+#         patch :update, id: topic, topic: invalid_attributes
+#         expect(assigns(:topic)).to eq topic
+#       end
 
-  #     it 're-renders the edit template' do
-  #       topic = Topic.create!(valid_attributes)
-  #       patch :update, id: topic, topic: invalid_attributes
-  #       expect(response).to render_template('edit')
-  #     end
-  #   end
-  # end
+#       it 're-renders the edit template' do
+#         topic = Topic.create!(valid_attributes)
+#         patch :update, id: topic, topic: invalid_attributes
+#         expect(response).to render_template('edit')
+#       end
+#     end
+  end
 
-  # describe 'DELETE destroy' do
-  #   it 'destroys the requested topic' do
-  #     topic = Topic.create!(valid_attributes)
-  #     expect {
-  #       delete :destroy, id: topic
-  #     }.to change(Topic, :count).by(-1)
-  #   end
+#   describe 'DELETE destroy' do
+#     it 'destroys the requested topic' do
+#       topic = Topic.create!(valid_attributes)
+#       expect {
+#         delete :destroy, id: topic
+#       }.to change(Topic, :count).by(-1)
+#     end
 
-  #   it 'redirects to the topics list' do
-  #     topic = Topic.create!(valid_attributes)
-  #     delete :destroy, id: topic
-  #     expect(response).to redirect_to articles_url
-  #   end
-  # end
+#     it 'redirects to the topics list' do
+#       topic = Topic.create!(valid_attributes)
+#       delete :destroy, id: topic
+#       expect(response).to redirect_to articles_url
+#     end
+#   end
 end
