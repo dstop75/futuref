@@ -75,11 +75,11 @@ RSpec.describe ResourcesController do
         }.to change(Resource, :count).by 1
       end
 
-  #     it 'assigns @resource' do
-  #       post :create, topic_id: topic.id, resource: valid_attributes
-  #       expect(assigns(:resource)).to be_a Resource
-  #       expect(assigns(:resource)).to be_persisted
-  #     end
+      it 'assigns @resource' do
+        post :create, topic_id: topic.id, resource: valid_attributes
+        expect(assigns(:resource)).to be_a Resource
+        expect(assigns(:resource)).to be_persisted
+      end
 
   #     it 'redirects to the created topic' do
   #       post :create, topic_id: topic.id, resource: valid_attributes
