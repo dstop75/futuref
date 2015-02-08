@@ -29,13 +29,13 @@ RSpec.describe 'routes for topics' do
     )
   end
 
-  # it 'routes PATCH /topics/1 to the topics controller and sets id' do
-  #   expect(patch('topics/1')).to route_to(
-  #     controller: 'topics',
-  #     action: 'update',
-  #     id: '1'
-  #   )
-  # end
+  it 'routes PATCH /topics/1 to the topics controller and sets id' do
+    expect(patch('topics/1')).to route_to(
+      controller: 'topics',
+      action: 'update',
+      id: '1'
+    )
+  end
 
   # it 'routes DELETE /topics/1 to the topics controller and sets id' do
   #   expect(delete('topics/1')).to route_to(
