@@ -41,10 +41,10 @@ RSpec.describe ResourcesController do
       expect(response).to render_template('new')
     end
 
-  #   it 'assigns @resource' do
-  #     get :new, topic_id: topic.id
-  #     expect(assigns(:resource)).to be_a_new Resource
-  #   end
+    it 'assigns @resource' do
+      get :new, topic_id: topic.id
+      expect(assigns(:resource)).to be_a_new Resource
+    end
   end
 
   # describe 'GET show' do
