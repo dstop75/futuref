@@ -164,18 +164,18 @@ RSpec.describe TopicsController do
     end
   end
 
-#   describe 'DELETE destroy' do
-#     it 'destroys the requested topic' do
-#       topic = Topic.create!(valid_attributes)
-#       expect {
-#         delete :destroy, id: topic
-#       }.to change(Topic, :count).by(-1)
-#     end
+  describe 'DELETE destroy' do
+    it 'destroys the requested topic' do
+      topic = Topic.create!(valid_attributes)
+      expect {
+        delete :destroy, id: topic
+      }.to change(Topic, :count).by(-1)
+    end
 
 #     it 'redirects to the topics list' do
 #       topic = Topic.create!(valid_attributes)
 #       delete :destroy, id: topic
 #       expect(response).to redirect_to articles_url
 #     end
-#   end
+  end
 end
