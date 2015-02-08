@@ -156,11 +156,11 @@ RSpec.describe TopicsController do
         expect(assigns(:topic)).to eq topic
       end
 
-#       it 're-renders the edit template' do
-#         topic = Topic.create!(valid_attributes)
-#         patch :update, id: topic, topic: invalid_attributes
-#         expect(response).to render_template('edit')
-#       end
+      it 're-renders the edit template' do
+        topic = Topic.create!(valid_attributes)
+        patch :update, id: topic, topic: invalid_attributes
+        expect(response).to render_template('edit')
+      end
     end
   end
 
