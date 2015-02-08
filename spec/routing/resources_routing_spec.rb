@@ -9,9 +9,9 @@ RSpec.describe 'routes for resources' do
     expect(get('/topics/1/resources/new')).to route_to('resources#new', topic_id: '1')
   end
 
-  # it 'routes POST /topics/:topic_id/resources to the resources controller' do
-  #   expect(post('/topics/1/resources')).to route_to('resources#create', topic_id: '1')
-  # end
+  it 'routes POST /topics/:topic_id/resources to the resources controller' do
+    expect(post('/topics/1/resources')).to route_to('resources#create', topic_id: '1')
+  end
 
   # it 'routes GET /resources/:id to the resources controller and sets id' do
   #   expect(get('/resources/1')).to route_to(controller: 'resources', action: 'show', id: '1')
