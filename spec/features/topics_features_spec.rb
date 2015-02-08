@@ -29,18 +29,17 @@ RSpec.feature 'Managing topics' do
     expect(page).to have_content 'REST'
   end
 
-  # scenario 'Update a topic' do
-  #   topic = Topic.create!(name: 'REST')
+  scenario 'Update a topic' do
+    topic = Topic.create!(name: 'REST')
 
-  #   visit "topics/#{topic.id}/edit"
+    visit "topics/#{topic.id}/edit"
 
-  #   fill_in 'Name', with: 'Conventions'
-  #   click_on 'Update Topic'
+    fill_in 'Name', with: 'Conventions'
+    click_on 'Update Topic'
 
-  #   expect(page).to have_content(/success/i)
-  #   expect(page.find('h1')).to have_content 'A Different Trick'
-  #   expect(page).to have_content 'Much disbelief. Wow.'
-  # end
+    expect(page).to have_content(/success/i)
+    expect(page).to have_content 'Conventions'
+  end
 
   # scenario 'Delete a topic' do
   #   topic = Topic.create!(name: 'REST')

@@ -1,5 +1,5 @@
 <h1>Topics:</h1>
 
 <% @topics.each do |topic| %>
-  <h2><%= topic.name %></h2>
+  <h2><%= link_to topic.name, topic %></h2>
 <% end %>

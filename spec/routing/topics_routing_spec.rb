@@ -21,13 +21,13 @@ RSpec.describe 'routes for topics' do
     )
   end
 
-  # it 'routes GET /topics/1/edit to the topics controller and sets id' do
-  #   expect(get('topics/1/edit')).to route_to(
-  #     controller: 'topics',
-  #     action: 'edit',
-  #     id: '1'
-  #   )
-  # end
+  it 'routes GET /topics/1/edit to the topics controller and sets id' do
+    expect(get('topics/1/edit')).to route_to(
+      controller: 'topics',
+      action: 'edit',
+      id: '1'
+    )
+  end
 
   # it 'routes PATCH /topics/1 to the topics controller and sets id' do
   #   expect(patch('topics/1')).to route_to(
