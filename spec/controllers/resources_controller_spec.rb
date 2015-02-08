@@ -36,10 +36,10 @@ RSpec.describe ResourcesController do
       expect(response.status).to eq 200
     end
 
-  #   it 'renders the new template' do
-  #     get :new, topic_id: topic.id
-  #     expect(response).to render_template('new')
-  #   end
+    it 'renders the new template' do
+      get :new, topic_id: topic.id
+      expect(response).to render_template('new')
+    end
 
   #   it 'assigns @resource' do
   #     get :new, topic_id: topic.id
