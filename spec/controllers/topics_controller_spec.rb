@@ -136,11 +136,11 @@ RSpec.describe TopicsController do
         expect(topic.name).to eq new_attributes[:name]
       end
 
-#       it 'assigns @topic' do
-#         topic = Topic.create!(valid_attributes)
-#         patch :update, id: topic, topic: new_attributes
-#         expect(assigns(:topic)).to eq topic
-#       end
+      it 'assigns @topic' do
+        topic = Topic.create!(valid_attributes)
+        patch :update, id: topic, topic: new_attributes
+        expect(assigns(:topic)).to eq topic
+      end
 
 #       it 'redirects to the topic' do
 #         topic = Topic.create!(valid_attributes)
