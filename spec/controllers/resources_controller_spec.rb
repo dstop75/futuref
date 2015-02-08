@@ -67,13 +67,13 @@ RSpec.describe ResourcesController do
   #   end
   # end
 
-  # describe 'POST create' do
-  #   context 'with valid attributes' do
-  #     it 'saves a new resource' do
-  #       expect {
-  #         post :create, topic_id: topic.id, resource: valid_attributes
-  #       }.to change(Resource, :count).by 1
-  #     end
+  describe 'POST create' do
+    context 'with valid attributes' do
+      it 'saves a new resource' do
+        expect {
+          post :create, topic_id: topic.id, resource: valid_attributes
+        }.to change(Resource, :count).by 1
+      end
 
   #     it 'assigns @resource' do
   #       post :create, topic_id: topic.id, resource: valid_attributes
@@ -85,7 +85,7 @@ RSpec.describe ResourcesController do
   #       post :create, topic_id: topic.id, resource: valid_attributes
   #       expect(response).to redirect_to(Resource.last)
   #     end
-  #   end
+    end
 
   #   context 'with invalid attributes' do
   #     it 'assigns @resource, but does not save a new resource' do
@@ -98,7 +98,7 @@ RSpec.describe ResourcesController do
   #       expect(response).to render_template 'new'
   #     end
   #   end
-  # end
+  end
 
   # describe 'GET edit' do
   #   it 'has a 200 status code' do
