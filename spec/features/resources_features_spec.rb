@@ -13,15 +13,15 @@ RSpec.feature 'Managing resources' do
     expect(page).to have_selector 'div', count: 3
   end
 
-  # scenario 'Create a resource' do
-  #   topic = Topic.create!(name: 'Conventions')
-  #   visit "/topics/#{topic.id}/resources/new"
+  scenario 'Create a resource' do
+    topic = Topic.create!(name: 'Relational Databases')
+    visit "/topics/#{topic.id}/resources/new"
 
-  #   fill_in 'Name', with: 'Data Modeling 101'
-  #   click_on 'Create Resource'
+    fill_in 'Name', with: 'Data Modeling 101'
+    click_on 'Create Resource'
 
-  #   expect(page).to have_content(/success/i)
-  # end
+    expect(page).to have_content(/success/i)
+  end
 
   # scenario 'Read a resource' do
   #   topic = Topic.create!(name: 'Conventions')
