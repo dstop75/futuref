@@ -9,7 +9,7 @@ RSpec.feature 'Managing topics' do
     visit '/topics'
 
     expect(page).to have_content 'Topics'
-    expect(page).to have_selector 'h2', count: 3
+    expect(page).to have_selector 'p', count: 3
   end
 
   scenario 'Create a topic' do
@@ -44,9 +44,9 @@ RSpec.feature 'Managing topics' do
   scenario 'Delete a topic' do
     topic = Topic.create!(name: 'REST')
 
-    visit "topics/#{topic.id}"
+    visit "topics"
 
-    click_on 'Delete Topic'
+    click_on 'Delete'
 
     expect(page).to have_content(/success/i)
   end

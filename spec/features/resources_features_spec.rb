@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.feature 'Managing resources' do
   scenario 'List all resources' do
-    topic = Topic.create!(name: 'Conventions')
-    Resource.create!(name: 'Deploying to Heroku', topic: topic)
-    Resource.create!(name: 'Getting started with Rails', topic: topic)
-    Resource.create!(name: 'Bootstrap tutorial', topic: topic)
+    topic = Topic.create!(name: 'Heroku')
+    Resource.create!(name: 'Deploying to Heroku', url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku', topic: topic)
+    Resource.create!(name: 'Getting started with Rails', url: 'https://devcenter.heroku.com/articles/getting-started-with-rails4', topic: topic)
+    Resource.create!(name: 'Heroku Wikipedia', url: 'http://en.wikipedia.org/wiki/Heroku', topic: topic)
 
     visit "/topics/#{topic.id}"
 
-    expect(page).to have_content 'Resources'
-    expect(page).to have_selector 'p', count: 3
+    expect(page).to have_content "Heroku-related Resources"
+    expect(page).to have_selector 'div', count: 3
   end
 
   # scenario 'Create a resource' do

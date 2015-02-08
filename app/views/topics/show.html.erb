@@ -1,10 +1,11 @@
 <%= render 'topics' %>
 
-<h1><%= @topic.name %> Resources:</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
 
-<%= link_to 'Edit Topic', edit_topic_path(@topic.id) %>
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
 
-<%= button_to 'Delete Topic', topic_path(@topic), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-
-<%#= render 'resources/resources' %>
+<%= render 'resources/resources' %>
