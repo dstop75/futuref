@@ -41,7 +41,7 @@ class TopicsController < ApplicationController
 
   def destroy
     Topic.find(params[:id]).destroy
-    # flash[:success] = 'Topic successfully deleted.'
+    flash[:success] = 'Topic successfully deleted.'
     redirect_to topics_url
   end
 
