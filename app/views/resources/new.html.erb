@@ -1,8 +1,6 @@
-<%= render "topics/#{@topic.id}" %>
-
 <%= render 'resources' %>
 
-<h1>New Resource</h1>
+<h1>New <%= @topic.name %>-related Resource:</h1>
 
 <%= render 'form' %>
 

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'topics#index'
   resources :topics, shallow: true do
-    resources :resources, only: [:index, :new]
+    resources :resources, only: [:new]
   end
 end
