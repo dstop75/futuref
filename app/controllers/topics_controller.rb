@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    # @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:id])
   end
 
   def create
