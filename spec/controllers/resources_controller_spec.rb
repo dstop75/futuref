@@ -28,13 +28,13 @@ RSpec.describe ResourcesController do
   #     get :index, topic_id: topic.id
   #     expect(assigns(:resources)).to eq resources
   #   end
-  end
+  # end
 
-  # describe 'GET new' do
-  #   it 'has a 200 status code' do
-  #     get :new, topic_id: topic.id
-  #     expect(response.status).to eq 200
-  #   end
+  describe 'GET new' do
+    it 'has a 200 status code' do
+      get :new, topic_id: topic.id
+      expect(response.status).to eq 200
+    end
 
   #   it 'renders the new template' do
   #     get :new, topic_id: topic.id
@@ -45,7 +45,7 @@ RSpec.describe ResourcesController do
   #     get :new, topic_id: topic.id
   #     expect(assigns(:resource)).to be_a_new Resource
   #   end
-  # end
+  end
 
   # describe 'GET show' do
   #   it 'has a 200 status code' do
