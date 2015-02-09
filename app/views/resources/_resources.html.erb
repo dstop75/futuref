@@ -13,8 +13,8 @@
       <tr>
         <div>
           <td><%= link_to resource.name, "#{resource.url}" %></td>
-          <td><%#= link_to 'Edit', edit_resource_path(resource.resource_id) %></td>
-          <td><%#= link_to 'Delete', resource, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_resource_path(resource.id) %></td>
+          <td><%#= link_to 'Delete', resource, method: :delete, data: { confirm: "#{pluralize(resource.comments.count, 'comment')} will also be deleted. Are you sure?" } %></td>
         </div>
       </tr>
     <% end %>
