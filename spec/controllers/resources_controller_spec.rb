@@ -138,11 +138,11 @@ RSpec.describe ResourcesController do
         expect(assigns(:resource)).to eq resource
       end
 
-  #     it 'redirects to the resource' do
-  #       resource = Resource.create!(valid_attributes)
-  #       patch :update, id: resource, resource: new_attributes
-  #       expect(response).to redirect_to resource
-  #     end
+      it 'redirects to the parent topic' do
+        resource = Resource.create!(valid_attributes)
+        patch :update, id: resource, resource: new_attributes
+        expect(response).to redirect_to resource.topic
+      end
     end
 
   #   context 'with invalid_attributes' do
