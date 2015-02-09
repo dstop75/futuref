@@ -22,6 +22,17 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def update
+    @resource = Resource.find(params[:id])
+
+    if @resource.update(resource_params)
+      flash[:success] = 'Resource successfully updated.'
+      redirect_to @resource.topic
+    else
+      render :edit
+    end
+  end
+
   private
     def resource_params
       params.require(:resource).permit(:name, :url)

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ResourcesController do
   let(:topic) { Topic.create(name: "topic name") }
   let(:valid_attributes) {
-    { name: "Here's a resource name", url: "http://www.google.com" }
+    { name: "Here's a resource name", url: "http://www.google.com", topic_id: topic.id }
   }
 
   let(:invalid_attributes) {
