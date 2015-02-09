@@ -11,11 +11,11 @@
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <p>
+        <h2>
           <td><%= link_to topic.name, topic %></td>
           <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
           <td><%= link_to 'Delete Topic', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
-        </p>
+        </h2>
       </tr>
     <% end %>
   </tbody>

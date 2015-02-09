@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Resource do
   describe '.create' do
-    topic = Topic.create!(name: 'Heroku')
+    let(:topic) { Topic.create!(name: 'Heroku') }
 
     it 'creates a new resource' do
       expect(Resource.create()).to be_a Resource

@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Comment do
   describe '.create' do
-    topic = Topic.create!(name: 'Heroku')
-    resource = Resource.create!(name: 'Deploying to Heroku', url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku', topic: topic)
+    let(:topic) { Topic.create!(name: 'Heroku') }
+    let(:resource) { Resource.create!(name: 'Deploying to Heroku', url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku', topic: topic) }
 
     it 'creates a new comment' do
       expect(Comment.create()).to be_a Comment
