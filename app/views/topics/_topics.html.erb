@@ -14,7 +14,7 @@
         <p>
           <td><%= link_to topic.name, topic %></td>
           <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-          <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
+          <td><%= link_to 'Delete Topic', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
         </p>
       </tr>
     <% end %>

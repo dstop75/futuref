@@ -168,11 +168,11 @@ RSpec.describe ResourcesController do
       }. to change(Resource, :count).by(-1)
     end
 
-  #   it 'redirects to the resources list' do
-  #     resource = Resource.create!(valid_attributes)
-  #     topic_id = resource.topic_id
-  #     delete :destroy, id: resource
-  #     expect(response).to redirect_to topic_resources_url(topic_id)
-  #   end
+    it 'redirects to the parent topic' do
+      resource = Resource.create!(valid_attributes)
+      topic = resource.topic
+      delete :destroy, id: resource
+      expect(response).to redirect_to topic
+    end
   end
 end
