@@ -14,7 +14,21 @@
         <div>
           <td><%= link_to resource.name, "#{resource.url}" %></td>
           <td><%= link_to 'Edit', edit_resource_path(resource.id) %></td>
-          <td><%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: "Are you sure?" } %></td>
+          <td><%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+          <% resource.comments.each do |comment| %>
+            <tr>
+
+              <!-- <h3 h3 selector used for testing purposes only> -->
+              <h3>
+                <td><%= comment.message %></td>
+                <td><%#= link_to 'Edit', edit_comment_path(comment.id) %></td>
+                <td><%#= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%#= render 'comments/form' %></td>
+              </h3>
+              <!-- </h3 h3 selector used for testing purposes only> -->
+            </tr>
+          <% end %>
         </div>
       </tr>
     <% end %>
