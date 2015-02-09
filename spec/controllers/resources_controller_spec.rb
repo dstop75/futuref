@@ -101,12 +101,12 @@ RSpec.describe ResourcesController do
     end
   end
 
-  # describe 'GET edit' do
-  #   it 'has a 200 status code' do
-  #     resource = Resource.create!(valid_attributes)
-  #     get :edit, id: resource
-  #     expect(response.status).to eq 200
-  #   end
+  describe 'GET edit' do
+    it 'has a 200 status code' do
+      resource = Resource.create!(valid_attributes)
+      get :edit, id: resource
+      expect(response.status).to eq 200
+    end
 
   #   it 'renders the edit template' do
   #     resource = Resource.create!(valid_attributes)
@@ -119,7 +119,7 @@ RSpec.describe ResourcesController do
   #     get :edit, id: resource
   #     expect(assigns(:resource)).to eq resource
   #   end
-  # end
+  end
 
   # describe 'PATCH update' do
   #   context 'with valid attributes' do

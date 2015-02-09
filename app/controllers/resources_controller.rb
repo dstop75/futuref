@@ -5,6 +5,10 @@ class ResourcesController < ApplicationController
     @resource = @topic.resources.new
   end
 
+  def edit
+    # @resource = Resource.find(params[:id])
+  end
+
   def create
     @topic = Topic.find(params[:topic_id])
     @resource = @topic.resources.new(resource_params)
