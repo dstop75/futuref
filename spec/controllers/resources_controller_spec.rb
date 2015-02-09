@@ -132,11 +132,11 @@ RSpec.describe ResourcesController do
         expect(resource.name).to eq new_attributes[:name]
       end
 
-  #     it 'assigns @resource' do
-  #       resource = Resource.create!(valid_attributes)
-  #       patch :update, id: resource, resource: new_attributes
-  #       expect(assigns(:resource)).to eq resource
-  #     end
+      it 'assigns @resource' do
+        resource = Resource.create!(valid_attributes)
+        patch :update, id: resource, resource: new_attributes
+        expect(assigns(:resource)).to eq resource
+      end
 
   #     it 'redirects to the resource' do
   #       resource = Resource.create!(valid_attributes)
