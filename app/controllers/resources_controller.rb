@@ -36,7 +36,7 @@ class ResourcesController < ApplicationController
   def destroy
     @topic = Resource.find(params[:id]).topic
     Resource.find(params[:id]).destroy
-    # flash[:success] = 'Comment successfully deleted.'
+    flash[:success] = 'Comment successfully deleted.'
     redirect_to @topic
   end
 
