@@ -5,12 +5,12 @@ class ResourcesController < ApplicationController
   end
 
   def create
-    topic = Topic.find(params[:topic_id])
-    @resource = topic.resources.new(resource_params)
+    @topic = Topic.find(params[:topic_id])
+    @resource = @topic.resources.new(resource_params)
 
     if @resource.save
       flash[:success] = 'Resource successfully created.'
-      redirect_to topic
+      redirect_to @topic
     else
       render :new
     end

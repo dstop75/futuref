@@ -14,10 +14,11 @@ RSpec.feature 'Managing resources' do
   end
 
   scenario 'Create a resource' do
-    topic = Topic.create!(name: 'Relational Databases')
+    topic = Topic.create!(name: 'Heroku')
     visit "/topics/#{topic.id}/resources/new"
 
-    fill_in 'Name', with: 'Data Modeling 101'
+    fill_in 'Name', with: 'Deploying to Heroku'
+    fill_in 'Url', with: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku'
     click_on 'Create Resource'
 
     expect(page).to have_content(/success/i)

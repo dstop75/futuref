@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ResourcesController do
   let(:topic) { Topic.create(name: "topic name") }
   let(:valid_attributes) {
-    { name: "Here's a resource name", url: "http://www.google.com", topic_id: topic.id }
+    { name: "Here's a resource name", url: "http://www.google.com" }
   }
 
   let(:invalid_attributes) {
@@ -87,17 +87,18 @@ RSpec.describe ResourcesController do
       end
     end
 
-  #   context 'with invalid attributes' do
-  #     it 'assigns @resource, but does not save a new resource' do
-  #       post :create, topic_id: topic.id, resource: invalid_attributes
-  #       expect(assigns(:resource)).to be_a_new Resource
-  #     end
+    context 'with invalid attributes' do
+      it 'assigns @resource but does not save a new resource' do
+        post :create, topic_id: topic.id, resource: invalid_attributes
+        expect(assigns(:resource)).to be_a_new Resource
+        expect(assigns(:resource)).not_to be_persisted
+      end
 
   #     it 're-renders the new template' do
   #       post :create, topic_id: topic.id, resource: invalid_attributes
   #       expect(response).to render_template 'new'
   #     end
-  #   end
+    end
   end
 
   # describe 'GET edit' do
