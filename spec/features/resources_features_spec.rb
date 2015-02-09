@@ -24,14 +24,14 @@ RSpec.feature 'Managing resources' do
     expect(page).to have_content(/success/i)
   end
 
-  # scenario 'Read a resource' do
-  #   topic = Topic.create!(name: 'Conventions')
-  #   resource = topic.resources.create!(name: 'Naming Conventions')
+  scenario 'Read a resource' do
+    topic = Topic.create!(name: 'Heroku')
+    Resource.create!(name: 'Deploying to Heroku', url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku', topic: topic)
 
-  #   visit "/resources/#{resource.id}"
+    visit "/topics/#{topic.id}"
 
-  #   expect(page).to have_content 'Naming Conventions'
-  # end
+    expect(page).to have_content 'Deploying to Heroku'
+  end
 
   # scenario 'Update a resource' do
   #   topic = Topic.create!(name: 'Conventions')
