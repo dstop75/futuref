@@ -160,13 +160,13 @@ RSpec.describe ResourcesController do
     end
   end
 
-  # describe 'DELETE destroy' do
-  #   it 'destroys the requested resource' do
-  #     resource = Resource.create!(valid_attributes)
-  #     expect {
-  #       delete :destroy, id: resource
-  #     }. to change(Resource, :count).by(-1)
-  #   end
+  describe 'DELETE destroy' do
+    it 'destroys the requested resource' do
+      resource = Resource.create!(valid_attributes)
+      expect {
+        delete :destroy, id: resource
+      }. to change(Resource, :count).by(-1)
+    end
 
   #   it 'redirects to the resources list' do
   #     resource = Resource.create!(valid_attributes)
@@ -174,5 +174,5 @@ RSpec.describe ResourcesController do
   #     delete :destroy, id: resource
   #     expect(response).to redirect_to topic_resources_url(topic_id)
   #   end
-  # end
+  end
 end

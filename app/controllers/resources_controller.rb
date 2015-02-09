@@ -33,6 +33,13 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def destroy
+    @topic = Resource.find(params[:id]).topic
+    Resource.find(params[:id]).destroy
+    # flash[:success] = 'Comment successfully deleted.'
+    redirect_to @topic
+  end
+
   private
     def resource_params
       params.require(:resource).permit(:name, :url)
