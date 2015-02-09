@@ -1,40 +1,35 @@
-<h1>Listing <%= @topic.name %>-related Resources:</h1>
+<h1><%= @topic.name %>-related Resources:</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @topic.resources.each do |resource| %>
-      <tr>
-        <div>
-          <td><%= link_to resource.name, "#{resource.url}" %></td>
-          <td><%= link_to 'Edit', edit_resource_path(resource.id) %></td>
-          <td><%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-          <% resource.comments.each do |comment| %>
-            <tr>
-
-              <!-- <h3 h3 selector used for testing purposes only> -->
-              <h3>
-                <td><%= comment.message %></td>
-                <td><%#= link_to 'Edit', edit_comment_path(comment.id) %></td>
-                <td><%#= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <td><%#= render 'comments/form' %></td>
-              </h3>
-              <!-- </h3 h3 selector used for testing purposes only> -->
-            </tr>
-          <% end %>
-        </div>
-      </tr>
+<% @topic.resources.each do |resource| %>
+  <ul>
+  <!-- h4 for testing purposes only -->
+    <li><h4></h4>
+      <%= link_to resource.name, "#{resource.url}" %>
+      <%= link_to 'Edit', edit_resource_path(resource.id) %>
+      <%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+<%#= render "/resources/#{resource.id}/comments" %>
+    <% resource.comments.each do |comment| %>
+      <ul>
+      <!-- h3 for testing purposes only -->
+        <li><h3></h3>
+          <%= comment.message %>
+          <%= link_to 'Edit', edit_comment_path(comment.id) %>
+          <%= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </li>
+      </ul>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+    <%= form_for([resource, resource.comments.new]) do |f| %>
+      <div class="field">
+        <%= f.label :message %>
+        <%= f.text_field :message %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= link_to 'New Resource', new_topic_resource_path(@topic) %>
+

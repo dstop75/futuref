@@ -10,22 +10,22 @@ RSpec.describe ResourcesController do
     { name: nil, url: nil, topic_id: nil }
   }
 
-  describe 'GET new' do
-    it 'has a 200 status code' do
-      get :new, topic_id: topic.id
-      expect(response.status).to eq 200
-    end
+  # describe 'GET new' do
+  #   it 'has a 200 status code' do
+  #     get :new, topic_id: topic.id
+  #     expect(response.status).to eq 200
+  #   end
 
-    it 'renders the new template' do
-      get :new, topic_id: topic.id
-      expect(response).to render_template('new')
-    end
+  #   it 'renders the new template' do
+  #     get :new, topic_id: topic.id
+  #     expect(response).to render_template('new')
+  #   end
 
-    it 'assigns @resource' do
-      get :new, topic_id: topic.id
-      expect(assigns(:resource)).to be_a_new Resource
-    end
-  end
+  #   it 'assigns @resource' do
+  #     get :new, topic_id: topic.id
+  #     expect(assigns(:resource)).to be_a_new Resource
+  #   end
+  # end
 
   describe 'POST create' do
     context 'with valid attributes' do

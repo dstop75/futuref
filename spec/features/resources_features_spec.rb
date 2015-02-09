@@ -10,7 +10,7 @@ RSpec.feature 'Managing resources' do
     visit "/topics/#{topic.id}"
 
     expect(page).to have_content "Heroku-related Resources"
-    expect(page).to have_selector 'div', count: 3
+    expect(page).to have_selector 'h4', count: 3
   end
 
   scenario 'Create a resource' do

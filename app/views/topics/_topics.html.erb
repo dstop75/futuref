@@ -1,26 +1,14 @@
 <h1>Listing Topics:</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @topics.each do |topic| %>
-      <tr>
-        <h2>
-          <td><%= link_to topic.name, topic %></td>
-          <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-          <td><%= link_to 'Delete Topic', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
-        </h2>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @topics.each do |topic| %>
+  <ul>
+  <!-- h2 for testing purposes only -->
+    <li><h2></h2>
+      <%= link_to topic.name, topic %>
+      <%= link_to 'Edit', edit_topic_path(topic) %>
+      <%= link_to 'Delete Topic', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %>
+    </li>
+  </ul>
+<% end %>
 
 <%= link_to 'New Topic', new_topic_path %>
