@@ -145,19 +145,19 @@ RSpec.describe ResourcesController do
       end
     end
 
-  #   context 'with invalid_attributes' do
-  #     it 'assigns @resource' do
-  #       resource = Resource.create!(valid_attributes)
-  #       patch :update, id: resource, resource: invalid_attributes
-  #       expect(assigns(:resource)).to eq resource
-  #     end
+    context 'with invalid_attributes' do
+      it 'assigns @resource' do
+        resource = Resource.create!(valid_attributes)
+        patch :update, id: resource, resource: invalid_attributes
+        expect(assigns(:resource)).to eq resource
+      end
 
   #     it 're-renders the edit template' do
   #       resource = Resource.create!(valid_attributes)
   #       patch :update, id: resource, resource: invalid_attributes
   #       expect(response).to render_template('edit')
   #     end
-  #   end
+    end
   end
 
   # describe 'DELETE destroy' do
