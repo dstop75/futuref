@@ -94,10 +94,10 @@ RSpec.describe ResourcesController do
         expect(assigns(:resource)).not_to be_persisted
       end
 
-  #     it 're-renders the new template' do
-  #       post :create, topic_id: topic.id, resource: invalid_attributes
-  #       expect(response).to render_template 'new'
-  #     end
+      it 're-renders the new template' do
+        post :create, topic_id: topic.id, resource: invalid_attributes
+        expect(response).to render_template 'new'
+      end
     end
   end
 
