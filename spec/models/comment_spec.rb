@@ -17,8 +17,8 @@ RSpec.describe Comment do
       expect(Comment.create(message: 'Deploying to Heroku')).not_to be_valid
     end
 
-    # it 'is valid with a message and a resource_id' do
-    #   expect(Comment.create(message: 'Deploying to Heroku', resource: resource)).to be_valid
-    # end
+    it 'is valid with a message and a resource_id' do
+      expect(Comment.create(message: 'Deploying to Heroku', resource: resource)).to be_valid
+    end
   end
 end
