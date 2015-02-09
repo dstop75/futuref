@@ -108,11 +108,11 @@ RSpec.describe ResourcesController do
       expect(response.status).to eq 200
     end
 
-  #   it 'renders the edit template' do
-  #     resource = Resource.create!(valid_attributes)
-  #     get :edit, id: resource
-  #     expect(response).to render_template('edit')
-  #   end
+    it 'renders the edit template' do
+      resource = Resource.create!(valid_attributes)
+      get :edit, id: resource
+      expect(response).to render_template('edit')
+    end
 
   #   it 'assigns @resource' do
   #     resource = Resource.create!(valid_attributes)
