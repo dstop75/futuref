@@ -7,7 +7,6 @@ class ResourcesController < ApplicationController
 
   def edit
     @resource = Resource.find(params[:id])
-    @topic = @resource.topic
   end
 
   def create
@@ -24,10 +23,11 @@ class ResourcesController < ApplicationController
 
   def update
     @resource = Resource.find(params[:id])
+    @topic = @resource.topic
 
     if @resource.update(resource_params)
       flash[:success] = 'Resource successfully updated.'
-      redirect_to @resource.topic
+      redirect_to @topic
     else
       render :edit
     end

@@ -45,7 +45,6 @@ RSpec.feature 'Managing resources' do
 
     expect(page).to have_content(/success/i)
     expect(page).to have_content 'Getting Started With Rails 4'
-    expect(page).to have_content 'https://devcenter.heroku.com/articles/getting-started-with-rails4'
   end
 
   # scenario 'Delete a resource' do
