@@ -21,9 +21,9 @@ RSpec.describe 'routes for resources' do
     expect(get('resources/1/edit')).to route_to(controller: 'resources', action: 'edit', id: '1')
   end
 
-  # it 'routes PATCH /resources/:id to the resources controller and sets id' do
-  #   expect(patch('resources/1')).to route_to(controller: 'resources', action: 'update', id: '1')
-  # end
+  it 'routes PATCH /resources/:id to the resources controller and sets id' do
+    expect(patch('resources/1')).to route_to(controller: 'resources', action: 'update', id: '1')
+  end
 
   # it 'routes DELETE /resources/:id to the resources controller and sets id' do
   #   expect(delete('resources/1')).to route_to(controller: 'resources', action: 'destroy', id: '1')

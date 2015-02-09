@@ -121,16 +121,16 @@ RSpec.describe ResourcesController do
     end
   end
 
-  # describe 'PATCH update' do
-  #   context 'with valid attributes' do
-  #     let(:new_attributes) { { body: 'a new body!' } }
+  describe 'PATCH update' do
+    context 'with valid attributes' do
+      let(:new_attributes) { { name: 'a new name!', url: 'a new url!' } }
 
-  #     it 'updates the requested resource' do
-  #       resource = Resource.create!(valid_attributes)
-  #       patch :update, id: resource, resource: new_attributes
-  #       resource.reload
-  #       expect(resource.body).to eq new_attributes[:body]
-  #     end
+      it 'updates the requested resource' do
+        resource = Resource.create!(valid_attributes)
+        patch :update, id: resource, resource: new_attributes
+        resource.reload
+        expect(resource.name).to eq new_attributes[:name]
+      end
 
   #     it 'assigns @resource' do
   #       resource = Resource.create!(valid_attributes)
@@ -143,7 +143,7 @@ RSpec.describe ResourcesController do
   #       patch :update, id: resource, resource: new_attributes
   #       expect(response).to redirect_to resource
   #     end
-  #   end
+    end
 
   #   context 'with invalid_attributes' do
   #     it 'assigns @resource' do
@@ -158,7 +158,7 @@ RSpec.describe ResourcesController do
   #       expect(response).to render_template('edit')
   #     end
   #   end
-  # end
+  end
 
   # describe 'DELETE destroy' do
   #   it 'destroys the requested resource' do

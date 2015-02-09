@@ -7,6 +7,7 @@ class ResourcesController < ApplicationController
 
   def edit
     @resource = Resource.find(params[:id])
+    @topic = @resource.topic
   end
 
   def create
