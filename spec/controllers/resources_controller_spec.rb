@@ -81,10 +81,10 @@ RSpec.describe ResourcesController do
         expect(assigns(:resource)).to be_persisted
       end
 
-  #     it 'redirects to the created topic' do
-  #       post :create, topic_id: topic.id, resource: valid_attributes
-  #       expect(response).to redirect_to(Resource.last)
-  #     end
+      it 'redirects to the parent topic' do
+        post :create, topic_id: topic.id, resource: valid_attributes
+        expect(response).to redirect_to(topic)
+      end
     end
 
   #   context 'with invalid attributes' do
