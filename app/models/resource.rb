@@ -4,4 +4,5 @@ class Resource < ActiveRecord::Base
 
   validates :name, presence: true
   validates :url, presence: true
+  validates :topic_id, presence: true
 end
