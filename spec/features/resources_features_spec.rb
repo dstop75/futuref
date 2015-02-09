@@ -33,18 +33,20 @@ RSpec.feature 'Managing resources' do
     expect(page).to have_content 'Deploying to Heroku'
   end
 
-  # scenario 'Update a resource' do
-  #   topic = Topic.create!(name: 'Conventions')
-  #   resource = topic.resources.create!(name: 'Naming Conventions')
+  scenario 'Update a resource' do
+    topic = Topic.create!(name: 'Heroku')
+    resource = topic.resources.create!(name: 'Deploying to Heroku', url: 'http://docs.railsbridge.org/intro-to-rails/deploying_to_heroku')
 
-  #   visit "/resources/#{resource.id}/edit"
+    visit "/resources/#{resource.id}/edit"
 
-  #   fill_in 'Name', with: 'Routing Conventions'
-  #   click_on 'Update Resource'
+    fill_in 'Name', with: 'Getting Started With Rails 4'
+    fill_in 'Url', with: 'https://devcenter.heroku.com/articles/getting-started-with-rails4'
+    click_on 'Update Resource'
 
-  #   expect(page).to have_content(/success/i)
-  #   expect(page).to have_content 'Routing Conventions'
-  # end
+    expect(page).to have_content(/success/i)
+    expect(page).to have_content 'Getting Started With Rails 4'
+    expect(page).to have_content 'https://devcenter.heroku.com/articles/getting-started-with-rails4'
+  end
 
   # scenario 'Delete a resource' do
   #   topic = Topic.create!(name: 'Conventions')
