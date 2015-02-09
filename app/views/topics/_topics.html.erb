@@ -1,4 +1,4 @@
-<h1>Listing Topics</h1>
+<h1>Listing Topics:</h1>
 
 <table>
   <thead>
@@ -12,11 +12,9 @@
     <% @topics.each do |topic| %>
       <tr>
         <p>
-          <td><%= topic.name %></td>
-          <td><%= link_to 'Show', topic %></td>
+          <td><%= link_to topic.name, topic %></td>
           <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-          <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <td><%#= link_to 'Delete', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
+          <td><%= link_to 'Delete', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %></td>
         </p>
       </tr>
     <% end %>

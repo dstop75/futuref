@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   def new
+    @topics = Topic.all
     @topic = Topic.find(params[:topic_id])
     @resource = @topic.resources.new
   end
