@@ -114,11 +114,11 @@ RSpec.describe ResourcesController do
       expect(response).to render_template('edit')
     end
 
-  #   it 'assigns @resource' do
-  #     resource = Resource.create!(valid_attributes)
-  #     get :edit, id: resource
-  #     expect(assigns(:resource)).to eq resource
-  #   end
+    it 'assigns @resource' do
+      resource = Resource.create!(valid_attributes)
+      get :edit, id: resource
+      expect(assigns(:resource)).to eq resource
+    end
   end
 
   # describe 'PATCH update' do
