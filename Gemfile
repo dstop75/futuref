@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.2.0'
   gem 'rails', '4.2.0'
+  gem 'bootstrap-sass', '~> 3.2.0'
+  gem 'autoprefixer-rails'
   gem 'pg'
   gem 'puma'
   gem 'sass-rails', '~> 5.0'
