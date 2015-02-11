@@ -13,7 +13,7 @@ RSpec.feature 'Managing comments' do
     expect(page).to have_content 'This resource is too advanced'
     expect(page).to have_content 'This resource is too basic'
     expect(page).to have_content 'This resource is just right'
-    expect(page).to have_selector 'h3', count: 3
+    expect(page).to have_selector '.comment', count: 3
   end
 
   scenario 'Create a comment' do
