@@ -1,11 +1,11 @@
 <div class="row">
   <div class="col-sm-8">
-    <h3 class="banana"><strong><%= @topic.name %> Links </strong></h3>
+    <h3><strong><%= @topic.name %> Links </strong></h3>
   </div>
   <div class="col-sm-4">
     <div class="btn-group" role="group" aria-label="...">
-      <%= button_to 'Edit', edit_topic_path(@topic), method: :get, class: 'btn btn-default' %>
-      <%= button_to 'Delete', @topic, method: :delete, class: 'btn btn-default' %>
+      <%= link_to 'Edit', edit_topic_path(@topic), method: :get, class: 'btn btn-default' %>
+      <%= link_to 'Delete', @topic, method: :delete, data: { confirm: "#{pluralize(@topic.resources.count, 'link')} will also be deleted. Are you sure?" }, class: 'btn btn-default' %>
     </div>
   </div>
 </div>
@@ -17,8 +17,8 @@
       </div>
       <div class="col-sm-4">
         <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_resource_path(resource.id) %></button>
-          <button type="button" class="btn btn-default"><%= link_to 'Delete', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+          <%= link_to 'Edit', edit_resource_path(resource.id), method: :get, class: 'btn btn-default' %>
+          <%= link_to 'Delete', resource_path(resource.id), method: :delete, data: { confirm: "#{pluralize(resource.comments.count, 'comment')} will also be deleted. Are you sure?" }, class: 'btn btn-default' %>
         </div>
       </div>
     </div>
@@ -34,8 +34,8 @@
         </div>
         <div class="col-sm-4">
           <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_comment_path(comment.id) %></button>
-            <button type="button" class="btn btn-default"><%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            <%= link_to 'Edit', edit_comment_path(comment.id), class: 'btn btn-default' %>
+            <%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default' %>
           </div>
         </div>
       <% end %>
