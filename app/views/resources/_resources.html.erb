@@ -1,36 +1,3 @@
-<%# @topic.resources.each do |resource| %>
-  <!-- <ul> -->
-  <!-- h4 for testing purposes only -->
-    <!-- <li><h4></h4> -->
-      <%#= link_to resource.name, "#{resource.url}" %>
-      <%#= link_to 'Edit', edit_resource_path(resource.id) %>
-      <%#= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    <!-- </li> -->
-<%#= render "/resources/#{resource.id}/comments" %>
-    <%# resource.comments.each do |comment| %>
-      <!-- <ul> -->
-      <!-- h3 for testing purposes only -->
-        <!-- <li><h3></h3> -->
-          <%#= comment.message %>
-          <%#= link_to 'Edit', edit_comment_path(comment.id) %>
-          <%#= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <!-- </li> -->
-      <!-- </ul> -->
-    <%# end %>
-    <%#= form_for([resource, resource.comments.new]) do |f| %>
-      <!-- <div class="field"> -->
-        <%#= f.label :message %>
-        <%#= f.text_field :message %>
-      <!-- </div> -->
-      <!-- <div class="actions"> -->
-        <%#= f.submit %>
-      <!-- </div> -->
-    <%# end %>
-  <!-- </ul> -->
-<%# end %>
-
-<%#= link_to 'New Resource', new_topic_resource_path(@topic) %>
-
 <div class="list-group">
   <div class="row">
     <div class="col-sm-8">
@@ -96,5 +63,4 @@
       </div>
     </div>
   <% end %>
-  <a href="#" class="list-group-item"><%= link_to 'New Link', new_topic_resource_path(@topic) %></a>
 </div>
