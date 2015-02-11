@@ -40,9 +40,10 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    Topic.find(params[:id]).destroy
+    @topic = Topic.find(params[:id])
+    @topic.destroy
     flash[:success] = 'Topic successfully deleted.'
-    redirect_to topics_url
+    redirect_to action: :index
   end
 
   private
