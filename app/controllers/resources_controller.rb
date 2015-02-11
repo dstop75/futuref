@@ -14,7 +14,7 @@ class ResourcesController < ApplicationController
     @resource = @topic.resources.new(resource_params)
 
     if @resource.save
-      flash[:success] = 'Resource successfully created.'
+      flash[:success] = 'Link successfully created.'
       redirect_to @topic
     else
       render :new
@@ -26,7 +26,7 @@ class ResourcesController < ApplicationController
     @topic = @resource.topic
 
     if @resource.update(resource_params)
-      flash[:success] = 'Resource successfully updated.'
+      flash[:success] = 'Link successfully updated.'
       redirect_to @topic
     else
       render :edit
@@ -36,7 +36,7 @@ class ResourcesController < ApplicationController
   def destroy
     @topic = Resource.find(params[:id]).topic
     Resource.find(params[:id]).destroy
-    flash[:success] = 'Comment successfully deleted.'
+    flash[:success] = 'Link successfully deleted.'
     redirect_to @topic
   end
 
