@@ -1,20 +1,3 @@
-<!-- <h1>Listing Topics:</h1> -->
-
-<%# @topics.each do |topic| %>
-  <!-- <ul> -->
-  <!-- h2 for testing purposes only -->
-    <!-- <li><h2></h2> -->
-      <%#= link_to topic.name, topic %>
-      <%#= link_to 'Edit', edit_topic_path(topic) %>
-      <%#= link_to 'Delete Topic', topic, method: :delete, data: { confirm: "#{pluralize(topic.resources.count, 'resource')} will also be deleted. Are you sure?" } %>
-    <!-- </li> -->
-  <!-- </ul> -->
-<%# end %>
-
-<%#= link_to 'New Topic', new_topic_path %>
-
-
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -45,17 +28,3 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
-<!-- <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    Programming Topics
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <% @topics.each do |topic| %>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= link_to topic.name, topic %></a></li>
-    <% end %>
-    <li role="presentation" class="divider"></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><%= link_to 'New Topic', new_topic_path %></a></li>
-  </ul>
-</div> -->
