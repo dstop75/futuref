@@ -10,6 +10,7 @@
     <title>futuref</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,19 +21,24 @@
   </head>
   <body>
 
-    <div id="main-container" class="container">
-      <div class="row">
-        <div class="col-xs-3">
-          <h1>futuref</h1>
-        </div>
-        <div class="col-xs-9">
-          <%= render 'flash' %>
-          <%= yield %>
-        </div>
+  <div class="container">
+    <div class="page-header">
+      <h1>futuref <small>bookmark your programming links for future reference</small></h1>
+    </div>
+  </div>
+
+  <div id="main-container" class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= render 'flash' %>
+        <%#= render 'layouts/messages' %>
+        <%= yield %>
       </div>
     </div>
+  </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
   </body>
 </html>

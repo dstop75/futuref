@@ -13,5 +13,25 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap-sprockets
-// = require_tree .
+//= require_tree .
+/*
+ * SmartMenus jQuery v0.9.7
+ * http://www.smartmenus.org/
+ *
+ * Copyright 2014 Vasil Dinkov, Vadikom Web Ltd.
+ * http://vadikom.com/
+ *
+ * Released under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+/*
+ * SmartMenus jQuery Bootstrap Addon - v0.1.1
+ * http://www.smartmenus.org/
+ *
+ * Copyright 2014 Vasil Dinkov, Vadikom Web Ltd.
+ * http://vadikom.com/
+ *
+ * Released under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */

@@ -1,35 +1,71 @@
-<h1><%= @topic.name %>-related Resources:</h1>
-
-<% @topic.resources.each do |resource| %>
-  <ul>
+<%# @topic.resources.each do |resource| %>
+  <!-- <ul> -->
   <!-- h4 for testing purposes only -->
-    <li><h4></h4>
-      <%= link_to resource.name, "#{resource.url}" %>
-      <%= link_to 'Edit', edit_resource_path(resource.id) %>
-      <%= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
+    <!-- <li><h4></h4> -->
+      <%#= link_to resource.name, "#{resource.url}" %>
+      <%#= link_to 'Edit', edit_resource_path(resource.id) %>
+      <%#= link_to 'Delete Resource', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <!-- </li> -->
 <%#= render "/resources/#{resource.id}/comments" %>
-    <% resource.comments.each do |comment| %>
-      <ul>
+    <%# resource.comments.each do |comment| %>
+      <!-- <ul> -->
       <!-- h3 for testing purposes only -->
-        <li><h3></h3>
-          <%= comment.message %>
-          <%= link_to 'Edit', edit_comment_path(comment.id) %>
-          <%= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </li>
-      </ul>
-    <% end %>
-    <%= form_for([resource, resource.comments.new]) do |f| %>
-      <div class="field">
-        <%= f.label :message %>
-        <%= f.text_field :message %>
-      </div>
-      <div class="actions">
-        <%= f.submit %>
-      </div>
-    <% end %>
-  </ul>
-<% end %>
+        <!-- <li><h3></h3> -->
+          <%#= comment.message %>
+          <%#= link_to 'Edit', edit_comment_path(comment.id) %>
+          <%#= link_to 'Delete Comment', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <!-- </li> -->
+      <!-- </ul> -->
+    <%# end %>
+    <%#= form_for([resource, resource.comments.new]) do |f| %>
+      <!-- <div class="field"> -->
+        <%#= f.label :message %>
+        <%#= f.text_field :message %>
+      <!-- </div> -->
+      <!-- <div class="actions"> -->
+        <%#= f.submit %>
+      <!-- </div> -->
+    <%# end %>
+  <!-- </ul> -->
+<%# end %>
 
-<%= link_to 'New Resource', new_topic_resource_path(@topic) %>
+<%#= link_to 'New Resource', new_topic_resource_path(@topic) %>
 
+<div class="list-group">
+  <h3>
+    <%= @topic.name %> Links
+  </h3>
+  <% @topic.resources.each do |resource| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="row">
+          <div class="col-sm-6">
+            <%= link_to resource.name, "#{resource.url}" %>
+          </div>
+          <div class="col-sm-6">
+            <div class="btn-group" role="group" aria-label="...">
+              <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_resource_path(resource.id) %></button>
+              <button type="button" class="btn btn-default"><%= link_to 'Delete', resource_path(resource.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% resource.comments.each do |comment| %>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-sm-6">
+              <%= comment.message %>
+            </div>
+            <div class="col-sm-6">
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default"><%= link_to 'Edit', edit_comment_path(comment.id) %></button>
+                <button type="button" class="btn btn-default"><%= link_to 'Delete', comment_path(comment.id), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <a href="#" class="list-group-item"><%= link_to 'New Link', new_topic_resource_path(@topic) %></a>
+</div>
