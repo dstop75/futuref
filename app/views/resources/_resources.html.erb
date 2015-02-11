@@ -60,6 +60,7 @@
           </div>
           </div>
         </div>
+        <p class="blog-post-meta">Link added: <%= resource.created_at.strftime("%d %b %y") %></p>
       </div>
       <% resource.comments.each do |comment| %>
         <div class="panel-body">
