@@ -175,7 +175,7 @@ RSpec.describe TopicsController do
     it 'redirects to the topics list' do
       topic = Topic.create!(valid_attributes)
       delete :destroy, id: topic
-      expect(response).to redirect_to topics_url
+      expect(response).to redirect_to action: :index
     end
   end
 end
