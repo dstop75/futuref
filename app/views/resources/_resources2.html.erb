@@ -18,7 +18,6 @@
       </div>
       <div class="col-sm-4">
         <div class="btn-group" role="group" aria-label="...">
-          <%#= link_to 'New', new_topic_resource_path(@topic), method: :get, class: 'btn btn-default' %>
           <%= link_to 'Edit', edit_resource_path(resource.id), method: :get, class: 'btn btn-default' %>
           <%= link_to 'Delete', resource_path(resource.id), method: :delete, data: { confirm: "#{pluralize(resource.comments.count, 'comment')} will also be deleted. Are you sure?" }, class: 'btn btn-default' %>
         </div>
