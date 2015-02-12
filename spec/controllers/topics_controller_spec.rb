@@ -78,9 +78,9 @@ RSpec.describe TopicsController do
         expect(assigns(:topic)).to be_persisted
       end
 
-      it 'redirects to topics#index' do
+      it 'redirects to topics#show' do
         post :create, topic: valid_attributes
-        expect(response).to redirect_to topics_url
+        expect(response).to render_template 'show'
       end
     end
 

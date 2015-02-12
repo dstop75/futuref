@@ -1,20 +1,18 @@
 class TopicsController < ApplicationController
+  before_action :set_topics, only: [:index, :show, :new]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+
   def index
-    @topics = Topic.all
   end
 
   def show
-    @topics = Topic.all
-    @topic = Topic.find(params[:id])
   end
 
   def new
-    @topics = Topic.all
     @topic = Topic.new
   end
 
   def edit
-    @topic = Topic.find(params[:id])
   end
 
   def create
@@ -22,14 +20,13 @@ class TopicsController < ApplicationController
 
     if @topic.save
       flash[:success] = 'Topic successfully created.'
-      redirect_to topics_url
+      redirect_to @topic
     else
       render :new
     end
   end
 
   def update
-    @topic = Topic.find(params[:id])
 
     if @topic.update_attributes(topic_params)
       flash[:success] = 'Topic successfully updated.'
@@ -40,13 +37,20 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:id])
     @topic.destroy
     flash[:success] = 'Topic successfully deleted.'
     redirect_to action: :index
   end
 
   private
+    def set_topics
+      @topics = Topic.all
+    end
+
+    def set_topic
+      @topic = Topic.find(params[:id])
+    end
+
     def topic_params
       params.require(:topic).permit(:name)
     end
