@@ -17,7 +17,6 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topic_params)
-
     if @topic.save
       flash[:success] = 'Topic successfully created.'
       redirect_to @topic
@@ -27,7 +26,6 @@ class TopicsController < ApplicationController
   end
 
   def update
-
     if @topic.update_attributes(topic_params)
       flash[:success] = 'Topic successfully updated.'
       redirect_to @topic
@@ -44,7 +42,7 @@ class TopicsController < ApplicationController
 
   private
     def set_topics
-      @topics = Topic.all
+      @topics = Topic.all.map.sort_by { |topic| topic.name }
     end
 
     def set_topic
