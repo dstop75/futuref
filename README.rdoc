@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+futuref helps developers save links to programming resources for future reference
 
-Things you may want to cover:
+https://safe-headland-6874.herokuapp.com/
 
-* Ruby version
+* Ruby 2.2.0
 
-* System dependencies
+* Rails 4.2.0
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* PostgreSQL 9.4.0
