@@ -58,7 +58,7 @@ RSpec.feature 'Managing comments' do
 
     visit "/topics/#{topic.id}"
 
-    click_on 'Delete comment'
+    click_on 'Delete'
 
     expect(page).to have_content(/success/i)
   end
