@@ -9,7 +9,7 @@ RSpec.feature 'Managing topics' do
     visit '/topics'
 
     expect(page).to have_content 'Topics'
-    expect(page).to have_selector 'h2', count: 3
+    expect(page).to have_selector 'a', count: 3
   end
 
   scenario 'Create a topic' do

@@ -53,7 +53,7 @@ RSpec.feature 'Managing resources' do
 
     visit "/topics/#{topic.id}"
 
-    click_on 'Delete Resource'
+    click_on 'Delete'
 
     expect(page).to have_content(/success/i)
   end
