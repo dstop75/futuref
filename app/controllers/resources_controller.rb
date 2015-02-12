@@ -1,4 +1,5 @@
 class ResourcesController < ApplicationController
+  before_action :set_topics
   before_action :set_topic, only: [:new, :create]
   before_action :set_resource, only: [:edit, :update, :destroy]
 
@@ -48,6 +49,10 @@ class ResourcesController < ApplicationController
 
     def set_topic
       @topic = Topic.find(params[:topic_id])
+    end
+
+    def set_topics
+      @topics = Topic.all.map.sort_by { |topic| topic.name }
     end
 
     def resource_params
